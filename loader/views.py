@@ -1,5 +1,5 @@
 import flask
-from flask import Blueprint, render_template, request, abort
+from flask import Blueprint, render_template, request
 import logging
 from main import utils
 from loader.utils import *
@@ -25,7 +25,7 @@ def create_new_post_by_user():
     try:
         new_post = {"pic": save_picture(picture), "content": content}
     except WrongImgType:
-       flask.abort(400)
+       abort(400)
 
     add_post(posts, new_post)
     return render_template("post_uploaded.html", new_post=new_post)

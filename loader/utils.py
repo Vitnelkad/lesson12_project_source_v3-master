@@ -20,5 +20,3 @@ def add_post(post_list, post):
 
 
 
-#def save_uploaded_image(picture):
-#    picture.save()
